@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Registration Form</h2>
+    <form th:action="@{/processForm}" th:object="${attendee}" method="POST">
+        <div class="box">
+            <label>Full name:</label>
+            <input type="text" th:field="*{fullName}" placeholder="Full Name">
+            <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" class="error"/>
+        </div>
+        <div class="box">
+            <label>Email:</label>
+            <input type="text" th:field="*{email}" placeholder="Email">
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"/>
+        </div>
+        <div class="box">
+            <label>Phone Number:</label>
+            <input type="text" th:field="*{phoneNumber}" placeholder="Phone Number">
+            <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error"/>
+        </div>
+        <div class="box">
+            <label>Dietary Preferences:</label>
+            <select th:field="*{dietaryPreferences}">
+                <option th:value="Vegetarian">Vegetarian</option>
+                <option th:value="Vegan">Vegan</option>
+                <option th:value="GlutenFree">Gluten Free</option>
+                <option th:value="NoPreferences">No preferences</option>
+            </select>
+            <span th:if="${#fields.hasErrors('dietaryPreferences')}" th:errors="*{dietaryPreferences}" class="error"/>
+        </div>
+        <div class="box">
+            <label>Sessions:</label>
+            <select th:field="*{sessionPreferences}">
+                <option th:value="Morning">Morning</option>
+                <option th:value="Afternoon">Afternoon</option>
+                <option th:value="FullDay">Full day</option>
+            </select>
+            <span th:if="${#fields.hasErrors('sessionPreferences')}" th:errors="*{sessionPreferences}" class="error"/>
+        </div>
+        <input type="submit" value="Register">
+    </form>
+</div>
+</body>
+</html>

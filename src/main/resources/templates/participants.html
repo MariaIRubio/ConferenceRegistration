@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Participants List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Participants List</h2>
+    <ul>
+        <li th:each="attendee : ${attendeeList}" th:text="${attendee}">
+<!--            <p th:text="${attendee.id}"/><br>-->
+<!--            <p th:text="${attendee.fullName}"/><br>-->
+<!--            <p th:text="${attendee.email}"/><br>-->
+<!--            <p th:text="${attendee.phoneNumber}"/><br>-->
+<!--            <p th:text="${attendee.dietaryPreferences}"/><br>-->
+<!--            <p th:text="${attendee.sessionPreferences}"/><br>-->
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

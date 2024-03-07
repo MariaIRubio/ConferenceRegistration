@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Registration Confirmation</h2>
+    <div class="box">
+        <label>Name: </label><span th:text="${attendee.fullName}"/>
+    </div>
+    <div class="box">
+        <label>Email: </label><span th:text="${attendee.email}"/>
+    </div>
+    <div class="box">
+        <label>Phone Number: </label><span th:text="${attendee.phoneNumber}"/>
+    </div>
+    <div class="box">
+        <label>Dietary Preferences: </label><span th:text="${attendee.dietaryPreferences}"/>
+    </div>
+    <div class="box">
+        <label>Session Preferences: </label><span th:text="${attendee.sessionPreferences}"/>
+    </div>
+    <a href="/viewParticipants"> <button>See participants List</button></a>
+    <a href="/conferenceregistration"><button>Register another participant</button></a>
+</div>
+</body>
+</html>
